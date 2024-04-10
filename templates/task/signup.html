@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+signup
+{% endblock title %}
+{% block body %}
+{% comment %} {% for message in messages  %} 
+    {{message}}
+{% endfor %} {% endcomment %}
+<form method='POST'>
+    {% csrf_token %}
+    <label for="username">USERNAME</label>
+    <input type="text" id="username" name="username">
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" name="password">
+    <label for="confirmpassword">CONFIRMPASSWORD</label>
+    <input type="password" id="confirmpassword" name="confirmpassword">
+    <button>SUBMIT</button>
+</form>
+<a href="{% url "signin" %}">
+    <button>signin</button>
+</a>
+{% endblock body %}
